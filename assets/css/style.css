@@ -4,18 +4,24 @@
     padding: 0;
 }
 
-:root {
-    --primary: #ccdad1;
-    --secondary: #9caea9;
-    --tertiary: #788585;
-    --light-dark: #6f6866;
-    --dark: #38302e;
-    --border-radius: .3rem;
-  }
-  
+body {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-.card {
-    margin: 0 0 20px 0;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-  }
+h3{
+    font-weight: bold;
+}
+
+.forecast{
+    font-size: 0.9em;
+}
+
+span{
+    font-size: 1em;
+}
+
+li:hover{
+    background-color: lightslategray;
+    text-decoration: underline;
+}
