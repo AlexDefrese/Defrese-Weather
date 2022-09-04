@@ -22,7 +22,7 @@ function find(c){
 }
 //Set up the API key
 var APIKey="a0aca8a89948154a4182dcecc780b513";
-// Display the curent and future weather to the user after grabing the city form the input text box.
+// Display the current and future weather to the user after grabbing the city form the input text box.
 function displayWeather(event){
     event.preventDefault();
     if(searchCity.val().trim()!==""){
@@ -30,9 +30,9 @@ function displayWeather(event){
         currentWeather(city);
     }
 }
-// Here we create the AJAX call
+// Create the AJAX call
 function currentWeather(city){
-    // Here we build the URL so we can get a data from server side.
+    // Build the URL so we can get a data from server side.
     var queryURL= "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APIKey;
     $.ajax({
         url:queryURL,
@@ -41,12 +41,12 @@ function currentWeather(city){
 
         // parse the response to display the current weather including the City name. the Date and the weather icon. 
         console.log(response);
-        //Dta object from server side Api for icon property.
+        //Get object from server side Api for icon property.
         var weathericon= response.weather[0].icon;
         var iconurl="https://openweathermap.org/img/wn/"+weathericon +"@2x.png";
         // The date format method is taken from the  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
         var date=new Date(response.dt*1000).toLocaleDateString();
-        //parse the response for name of city and concanatig the date and icon.
+        //parse the response for name of city and adding the date and icon.
         $(currentCity).html(response.name +"("+date+")" + "<img src="+iconurl+">");
         // parse the response to display the current temperature.
         // Convert the temp to fahrenheit
@@ -96,7 +96,7 @@ function UVIndex(ln,lt){
             });
 }
     
-// Here we display the 5 days forecast for the current city.
+// Display the 5 days forecast for the current city.
 function forecast(cityid){
     var dayover= false;
     var queryforcastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityid+"&appid="+APIKey;
